@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  srv-web:
+    image: srv-web
+    container_name: 'srv-web'
+    build: .
+    restart: always
+
+    # networks:
+    #   default:
+    #     ipv4_address: 10.5.0.10
+
+    ports:
+      - 80:80
+      - 443:443
+      - 4200:4200
+    volumes:
+      - C:\Users\fabio\Desktop\angular-17\:/home
+      - ./config_apache/sites:/etc/apache2/sites-available/
+    #hostname: p2ca.com.br
+
+# networks:
+#   default:
+#     external:
+#       name: rede-interna
+  #external: true    
